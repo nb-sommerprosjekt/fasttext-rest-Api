@@ -1,3 +1,4 @@
 *.pickle
 *.bin
 __pycache*
+*.idea
