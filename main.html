@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fasttext</title>
+</head>
+
+<h1>DeweyKlassifiserer</h1>
+<!--<button type="submit" onclick="UserAction()">Search</button>-->
+
+<!--<form id = "url_input" >-->
+    <!--url: <input type = "text" name = "URL"><br>-->
+    <!--<input type="button"  onclick = "UserAction()" value="Submit">-->
+<!--</form>-->
+
+<input type ="text" id ="URL_from_user"</input><br>
+
+<button onclick="UserAction()">Submit</button>
+
+<script>
+function UserAction() {
+
+    var url = document.getElementById("URL_from_user").value;
+    var url_encoded = encodeURI(url);
+    var server_url = "http://127.0.0.1:5000/rest_doc/"
+    full_path_to_response = server_url.concat(url_encoded)
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", full_path_to_response, false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+
+    window.open(full_path_to_response.toString());
+}
+</script>
+
+</body>
+</html>
