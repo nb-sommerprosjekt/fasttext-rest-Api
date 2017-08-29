@@ -2,4 +2,5 @@
 *.bin
 __pycache*
 *.idea
-*.txt
+log_file.txt
+
